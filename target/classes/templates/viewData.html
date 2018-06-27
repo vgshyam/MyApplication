@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="ISO-8859-1"/>
+<title>View Data</title>
+</head>
+<body>
+<table>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+        </tr> 
+        <tr th:each="stud: ${list}">
+                <td th:text="${stud.pid}"></td>
+                <td th:text="${stud.name}"></td>
+        </tr>
+</table>
+<a href="/">Home</a><br/>
+<a href="delete">Delete</a><br/>
+<a href="update">Update</a><br/>
+<a href="search">Search</a><br/>
+</body>
+</html>
