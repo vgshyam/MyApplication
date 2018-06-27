@@ -27,5 +27,13 @@ public class Services {
 //		d.forEach(list :: add);
 		return list;
 	}
-
+	
+	public Student findSpecific(int pid)
+	{
+		return studRepo.findByPid(pid);		
+	}
+	public void updateRecord(Student stud)
+	{
+		studRepo.save(stud);
+	}
 }

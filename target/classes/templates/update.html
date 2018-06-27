@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="ISO-8859-1"/>
+<title>Update Data</title>
+</head>
+<body>
+<span ></span>
+<form th:each="stud:${list}" action="display" method="post">
+PID &nbsp;&nbsp;<input type="text" name="p" th:value="${stud.pid}"> <br/>
+Name &nbsp;&nbsp;<input type="text" name="n" th:value="${stud.name}"> <br/>
+<input type="submit" value="Click">
+</form>
+
+<a href="/">Home</a><br/>
+</body>
+</html>

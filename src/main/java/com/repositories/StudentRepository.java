@@ -7,5 +7,6 @@ import com.domains.Student;
 
 @Repository
 public interface StudentRepository extends Neo4jRepository<Student, Long>{
-
+	
+	public Student findByPid(int pid);
 }

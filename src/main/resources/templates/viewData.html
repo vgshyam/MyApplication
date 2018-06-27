@@ -5,7 +5,7 @@
 <title>View Data</title>
 </head>
 <body>
-<table>
+<table border="1">
         <tr>
             <td>ID</td>
             <td>Name</td>
@@ -13,11 +13,10 @@
         <tr th:each="stud: ${list}">
                 <td th:text="${stud.pid}"></td>
                 <td th:text="${stud.name}"></td>
+                <td ><a th:href="@{'view/'+ ${stud.pid}}">Update</a></td>
+                 <td ><a th:href="@{'delete/'+ ${stud.pid}}">Delete</a></td>
         </tr>
 </table>
 <a href="/">Home</a><br/>
-<a href="delete">Delete</a><br/>
-<a href="update">Update</a><br/>
-<a href="search">Search</a><br/>
 </body>
 </html>
