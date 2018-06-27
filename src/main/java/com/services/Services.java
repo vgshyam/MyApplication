@@ -1,11 +1,7 @@
 package com.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.domains.Student;
 import com.repositories.StudentRepository;
 
