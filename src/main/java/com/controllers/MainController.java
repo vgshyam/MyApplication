@@ -12,6 +12,7 @@ import com.domains.Student;
 import com.services.Services;
 
 @Controller
+@RequestMapping(value="/")
 public class MainController {
 
 	@Autowired 
@@ -43,20 +44,26 @@ public class MainController {
 	@RequestMapping(value="/view/{id}", method=RequestMethod.GET)
 	public ModelAndView doViewSpecificRecord(@PathVariable("id") int pid)
 	{	
-		ModelAndView mv = new ModelAndView("update");
+		ModelAndView mv = new ModelAndView("updateData");
 		mv.addObject("list", serve.findSpecific(pid));
 		return mv;		
 	}
 	
-	@RequestMapping(value="/update", method=RequestMethod.POST)
+	@RequestMapping(value="/upd", method=RequestMethod.POST)
 	public ModelAndView doUpdate(@RequestParam("p") int pid,@RequestParam("n") String nm)
-	{	System.out.println("\n\n\n\t\t\t1");
-		ModelAndView mv = new ModelAndView("redirect: /display");
+	{	
+		ModelAndView mv = new ModelAndView("message");
 		Student studUpdate = serve.findSpecific(pid);
 		studUpdate.setName(nm);
-		System.out.println("\n\n\n\t\t\t2");
 		serve.updateRecord(studUpdate);
-		System.out.println("\n\n\n\t\t\t3");
+		return mv;		
+	}
+	
+	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
+	public ModelAndView doDelete(@PathVariable("id") int pid)
+	{	
+		ModelAndView mv = new ModelAndView("message");
+		serve.deleteNode(pid);
 		return mv;		
 	}
 }

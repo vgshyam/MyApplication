@@ -9,4 +9,5 @@ import com.domains.Student;
 public interface StudentRepository extends Neo4jRepository<Student, Long>{
 	
 	public Student findByPid(int pid);
+	public Long deleteByPid(int pid);
 }

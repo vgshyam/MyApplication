@@ -36,4 +36,8 @@ public class Services {
 	{
 		studRepo.save(stud);
 	}
+	public void deleteNode(int pid)
+	{
+		Long a=studRepo.deleteByPid(pid);
+	}
 }
